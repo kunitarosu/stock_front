@@ -53,7 +53,7 @@ $ ng serve
 ERROR in Error encountered resolving symbol values statically. Calling function 'ChartModule', function calls are not supported. Consider replacing the function or lambda with a reference to an exported function, resolving symbol AppModule in /home/stock/workspace/stock_front/src/app/app.module.ts, resolving symbol AppModule in /home/stock/workspace/stock_front/src/app/app.module.ts
 webpack: Failed to compile.
 
-$ curl -X GET http://localhost:4200
+$ ブラウザから -> http://localhost:4200
 ```
 ## Code scaffolding
 
