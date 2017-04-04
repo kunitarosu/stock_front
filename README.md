@@ -16,18 +16,18 @@ $ nam -v
 3.10.10
 
 // angular-cli
-npm install -g @angular/cli
+$ npm install -g @angular/cli
 
-git clone https://github.com/kunitarosu/stock_front.git
-cd stock_front
-npm install --save-dev @angular/cli@latest
-npm install
+$ git clone https://github.com/kunitarosu/stock_front.git
+$ cd stock_front
+$ npm install --save-dev @angular/cli@latest
+$ npm install
 
 // highchairs
-npm install angular2-highcharts --save
+$ npm install angular2-highcharts --save
 
 // Before -> Afterに編集
-vi angular-cli.json
+$ vi angular-cli.json
 
 Before:
 
@@ -47,11 +47,13 @@ After:
 }
 
 // 実行
-ng serve
+$ ng serve
 
 // 以下のエラーが出たらng serveしたままapp.module.tsを更新するとcompileが通って実行できるはず。原因は不明…
 ERROR in Error encountered resolving symbol values statically. Calling function 'ChartModule', function calls are not supported. Consider replacing the function or lambda with a reference to an exported function, resolving symbol AppModule in /home/stock/workspace/stock_front/src/app/app.module.ts, resolving symbol AppModule in /home/stock/workspace/stock_front/src/app/app.module.ts
 webpack: Failed to compile.
+
+$ curl -X GET http://localhost:4200
 ```
 ## Code scaffolding
 
