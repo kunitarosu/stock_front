@@ -12,7 +12,7 @@ $ nvm install 6.9.5
 $ node -v
 v6.9.5
 
-$ nam -v
+$ npm -v
 3.10.10
 
 // angular-cli
