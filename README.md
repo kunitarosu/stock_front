@@ -3,8 +3,56 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+// node
+$ git clone git://github.com/creationix/nvm.git ~/.nvm
+$ source ~/.nvm/nvm.sh
+$ nvm install 6.9.5
 
+$ node -v
+v6.9.5
+
+$ nam -v
+3.10.10
+
+// angular-cli
+npm install -g @angular/cli
+
+git clone https://github.com/kunitarosu/stock_front.git
+cd stock_front
+npm install --save-dev @angular/cli@latest
+npm install
+
+// highchairs
+npm install angular2-highcharts --save
+
+// Before -> Afterに編集
+vi angular-cli.json
+
+Before:
+
+"environments": {
+  "source": "environments/environment.ts",
+  "dev": "environments/environment.ts",
+  "prod": "environments/environment.prod.ts"
+}
+
+
+After:
+
+"environmentSource": "environments/environment.ts",
+"environments": {
+  "dev": "environments/environment.ts",
+  "prod": "environments/environment.prod.ts"
+}
+
+// 実行
+ng serve
+
+// 以下のエラーが出たらng serveしたままapp.module.tsを更新するとcompileが通って実行できるはず。原因は不明…
+ERROR in Error encountered resolving symbol values statically. Calling function 'ChartModule', function calls are not supported. Consider replacing the function or lambda with a reference to an exported function, resolving symbol AppModule in /home/stock/workspace/stock_front/src/app/app.module.ts, resolving symbol AppModule in /home/stock/workspace/stock_front/src/app/app.module.ts
+webpack: Failed to compile.
+```
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
