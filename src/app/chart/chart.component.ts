@@ -9,7 +9,7 @@ import { Http } from '@angular/http';
 
 export class ChartComponent {
   constructor(http: Http) {
-    http.get('http://www9383u.sakura.ne.jp/csvToHighchartsOHLC?fileName=EURJPY1440.csv').subscribe(res => {
+    http.get('http://localhost:8081/1/1/chart/eurjpy/hour4/heikinGoogleOHLC?from=2017.03.01%2000:00:00&to=2017.03.31%2023:59:59').subscribe(res => {
       this.options = {
         chart: {
           type: 'candlestick',
