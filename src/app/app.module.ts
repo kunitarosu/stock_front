@@ -4,17 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { ChartModule } from 'angular2-highcharts';
 import * as highcharts from 'highcharts';
-//import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
+import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 
 import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
 
 export function highchartsFactory() {
-      const hc = require('highcharts');
-      const dd = require('highcharts/modules/drilldown');
-      dd(hc);
-
-      return hc;
+  return require('highcharts/highstock');
 }
 
 @NgModule({
@@ -27,12 +23,14 @@ export function highchartsFactory() {
     FormsModule,
     HttpModule,
     JsonpModule,
-    ChartModule.forRoot(require('highcharts/highstock'))
+    ChartModule
   ],
-  //providers: [{
-  //  provide: HighchartsStatic,
-  //  useFactory: highchartsFactory
-  //}],
+  providers: [
+    {
+      provide: HighchartsStatic,
+      useFactory: highchartsFactory
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
